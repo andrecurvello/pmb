@@ -15,8 +15,10 @@ public class PMB {
 		focus.putString(2, 2, "hello world", Color.MAGENTA, Color.CYAN);
 		focus.refresh();
 		while(true) {
-			while((k = focus.readInput()) == null) Thread.yield();
-			if(k.getCharacter() == 'A') return;
+			if((k = focus.readInput()) != null) {
+				focus.putString(4, 4, String.valueOf(k.getCharacter()), Color.MAGENTA, Color.CYAN);
+				focus.refresh();
+			}
 		}
 		//focus.stopScreen();
 	}
