@@ -32,4 +32,8 @@ public class Token {
 	public int hashCode() {
 		return inside.hashCode();
 	}
+	
+	public Token index(Token i) {
+		throw new MachineException();
+	}
 }
