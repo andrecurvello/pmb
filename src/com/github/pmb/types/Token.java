@@ -13,6 +13,7 @@ public class Token implements Serializable {
 	Token link = empty;
 	Token inside = empty;//utility
 	static Token empty = new Empty();
+	static Token ok = new Ok();
 	
 	public Token read() {
 		return inside;
@@ -24,6 +25,10 @@ public class Token implements Serializable {
 
 	public Token advance() {
 		throw new MachineException();
+	}
+	
+	public Token getType() {
+		return new TypeToken(this);
 	}
 
 	public void before(Token t) {
@@ -60,5 +65,15 @@ public class Token implements Serializable {
 		//demote the type towards string
 		//TODO
 		throw new MachineException();
+	}
+	
+	public Token equal(Token t) {
+		if(hashCode() != t.hashCode()) return empty;
+		Class c = FloatToken.class;
+		Class d = getClass();
+		Class e = null;
+		if(d == c && (e = t.getClass()) != c) return empty;
+		if(d != c && e == c) return empty;
+		return ok;
 	}
 }

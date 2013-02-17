@@ -9,7 +9,7 @@ public class VarToken extends Token {
 	}
 	
 	public void write(Token t) {
-		this.before(t);
+		super.before(t);
 	}
 
 	public void before() {

@@ -25,4 +25,8 @@ public class FloatToken extends VarToken {
 	public Token next() {
 		return this;//adv fix
 	}
+	
+	public int hashcode() {
+		return Float.floatToRawIntBits(value);
+	}
 }
