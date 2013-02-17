@@ -1,32 +1,22 @@
 package com.github.pmb.types;
 
-public class StringToken extends Token {
+public class StringToken extends FloatToken {
+
+	private static final long serialVersionUID = 1L;
 	String text;
 	
 	public StringToken(String s) {
 		text = s.intern();
-		inside = empty;
-	}
-	
-	public StringToken(StringToken t) {
-		text = t.text;
-		inside = t.inside;
 	}
 
-	public Token read() {
-		return new StringToken(this);
-	}
-	
-	public void write(Token t) {
-		throw new MachineException();
-	}
-	
-	public Token auxRead() {
-		return inside;
-	}
-	
-	public void auxWrite(Token t) {
-		inside = t;
+	public Token advance() {
+		if((int)value >= text.length()) {
+			value = 0.0F;
+			return empty;
+		}
+		Token s = new StringToken(String.valueOf(text.charAt((int)value)));
+		value = value + 1.0F;
+		return s;
 	}
 	
 	public int hashCode() {

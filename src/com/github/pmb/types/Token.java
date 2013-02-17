@@ -3,10 +3,16 @@ import java.io.*;
 
 public class Token implements Serializable {
 
+	//WARNING! This whole package is very tightly coupled code.
+	//There are many side effect dependancies.
+
+	//All code is written for cooperative multitasking,
+	//and is NOT reentrant (for speed and lower size.
+
 	private static final long serialVersionUID = 1L;
-	Token inside = empty;
 	Token link = empty;
-	static Token empty = new EmptyToken();
+	Token inside = empty;//utility
+	static Token empty = new Empty();
 	
 	public Token read() {
 		return inside;
@@ -15,23 +21,19 @@ public class Token implements Serializable {
 	public void write(Token t) {
 		inside = t;
 	}
-	
-	public Token next() {
-		return link;
+
+	public Token advance() {
+		throw new MachineException();
 	}
-	
+
 	public void before(Token t) {
 		link = t;
 	}
-	
-	public Token auxRead() {
-		return empty;
+
+	public Token next() {
+		return link;
 	}
-	
-	public void auxWrite(Token t) {
-		throw new MachineException();
-	}
-	
+
 	public int hashCode() {
 		return inside.hashCode();
 	}
