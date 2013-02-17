@@ -1,4 +1,4 @@
-package com.github.pmb;
+package com.github.pmb.types;
 
 public class EmptyToken extends Token {
 	

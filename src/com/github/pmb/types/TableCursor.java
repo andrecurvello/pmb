@@ -1,4 +1,4 @@
-package com.github.pmb;
+package com.github.pmb.types;
 
 public class TableCursor extends StackCursor {
 	StackToken[] bucket = new StackToken[16];
