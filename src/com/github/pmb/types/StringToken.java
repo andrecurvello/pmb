@@ -22,4 +22,32 @@ public class StringToken extends FloatToken {
 	public int hashCode() {
 		return text.hashCode();
 	}
+	
+	public Token demote() {
+		return new StringToken("\"" + text.replaceAll("\"", "\"\"") + "\"");
+	}
+	
+	public Token add(FloatToken f) {
+		return new StringToken(text + ((StringToken)f).text);
+	}
+	
+	public Token sub(FloatToken f) {
+		return new StringToken(text.replaceAll(((StringToken)f).text, ""));
+	}
+	
+	public Token mul(FloatToken f) {
+		return add(f);
+	}
+	
+	public Token div(FloatToken f) {
+		return sub(f);
+	}
+	
+	public Token pow(FloatToken f) {
+		if(f.getClass() == StringToken.class) throw new MachineException();
+		String s = "";
+		int lim = (int)f.value;
+		for(int i = 0; i < lim; i++) s += text;
+		return new StringToken(s);
+	}
 }

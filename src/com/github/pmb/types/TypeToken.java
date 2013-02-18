@@ -5,7 +5,7 @@ public class TypeToken extends VarToken {
 	private static final long serialVersionUID = 1L;
 
 	public TypeToken(Token token) {
-		link = token;
+		before(token);
 	}
 	
 	public Token read() {
@@ -21,6 +21,6 @@ public class TypeToken extends VarToken {
 	}
 	
 	public int hashCode() {
-		return link.getClass().hashCode();
+		return next().getClass().hashCode();
 	}
 }

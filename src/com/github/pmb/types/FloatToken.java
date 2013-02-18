@@ -29,4 +29,28 @@ public class FloatToken extends VarToken {
 	public int hashcode() {
 		return Float.floatToRawIntBits(value);
 	}
+	
+	public Token demote() {
+		return new StringToken(String.valueOf(value));
+	}
+	
+	public Token add(FloatToken f) {
+		return new FloatToken(value + f.value);
+	}
+	
+	public Token sub(FloatToken f) {
+		return new FloatToken(value - f.value);
+	}
+	
+	public Token mul(FloatToken f) {
+		return new FloatToken(value * f.value);
+	}
+	
+	public Token div(FloatToken f) {
+		return new FloatToken(value / f.value);
+	}
+	
+	public Token pow(FloatToken f) {
+		return new FloatToken((float)Math.pow(value, f.value));
+	}
 }
