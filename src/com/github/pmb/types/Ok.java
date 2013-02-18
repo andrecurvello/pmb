@@ -5,4 +5,8 @@ public class Ok extends Empty {
 	public Token advance() {
 		return this;
 	}
+	
+	public void reset() {
+		
+	}
 }

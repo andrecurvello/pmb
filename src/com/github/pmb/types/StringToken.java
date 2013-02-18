@@ -19,6 +19,10 @@ public class StringToken extends FloatToken {
 		return s;
 	}
 	
+	public void reset() {
+		value = 0.0F;
+	}
+	
 	public int hashCode() {
 		return text.hashCode();
 	}

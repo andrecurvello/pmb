@@ -19,6 +19,10 @@ public class VarToken extends Token {
 	Token advSub() {
 		return empty;
 	}
+	
+	public void reset() {
+		inside = empty;
+	}
 
 	public Token advance() {
 		//inside is used as a presentation flag

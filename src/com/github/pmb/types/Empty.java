@@ -5,7 +5,7 @@ public class Empty extends Token {
 	private static final long serialVersionUID = 1L;
 
 	public Token read() {
-		return advance();
+		return empty;
 	}
 	
 	public void write(Token t) {
@@ -14,9 +14,5 @@ public class Empty extends Token {
 	
 	public void before(Token t) {
 		throw new MachineException();
-	}
-	
-	public Token advance() {
-		return empty;
 	}
 }

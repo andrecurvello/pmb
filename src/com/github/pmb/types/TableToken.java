@@ -49,6 +49,7 @@ public class TableToken extends StackToken {
 	Token find(Token t, boolean back) {
 		Token ta = where(t, back);
 		Token i;
+		ta.reset();
 		while((i = ta.advance()) != empty && (back?i.inside.next():i.inside) != t);
 		if(i != empty) {
 			if(empty.inside != empty) {

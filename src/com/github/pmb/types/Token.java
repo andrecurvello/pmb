@@ -22,6 +22,10 @@ public class Token implements Serializable {
 	public void write(Token t) {
 		inside = t;
 	}
+	
+	public void reset() {
+		throw new MachineException();
+	}
 
 	public Token advance() {
 		throw new MachineException();
