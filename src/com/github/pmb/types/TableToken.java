@@ -24,11 +24,6 @@ public class TableToken extends StackToken {
 			reverse[i] = new StackToken();
 		}
 	}
-
-	public Token advance() {
-		empty.inside = inside;//get the pre-pointer
-		return super.advance();
-	}
 	
 	void insert(Token t) {
 		bucket[hash(t)].write(t);

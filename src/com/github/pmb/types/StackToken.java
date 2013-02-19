@@ -11,6 +11,11 @@ public class StackToken extends VarToken {
 		return top.inside;//from container token
 	}
 	
+	public Token advance() {
+		empty.inside = inside;//get the pre-pointer
+		return super.advance();
+	}
+	
 	public void write(Token t) {
 		Token top = new Token(); //pointer reference
 		top.inside = t;

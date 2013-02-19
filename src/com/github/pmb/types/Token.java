@@ -72,12 +72,8 @@ public class Token implements Serializable {
 	}
 	
 	public Token equal(Token t) {
+		if(getClass() != t.getClass()) return empty;
 		if(hashCode() != t.hashCode()) return empty;
-		Class c = FloatToken.class;
-		Class d = getClass();
-		Class e = null;
-		if(d == c && (e = t.getClass()) != c) return empty;
-		if(d != c && e == c) return empty;
 		return ok;
 	}
 }
