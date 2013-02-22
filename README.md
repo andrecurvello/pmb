@@ -13,4 +13,4 @@ Post Modern BASIC written in Java. The prime motivation is to write a language s
 Current Status
 ==============
 
-Writting the type classes, and a simple test of the terminal.
+Writing the type classes, and a simple test of the terminal. The type function dispatch is under consideration. This will perhaps change the type system a little, and the last implemtation details. Some of the implementation has not been done yet, to avoid later changes. I think I'm at the point of introducing the expression stack.
