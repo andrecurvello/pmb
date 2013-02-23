@@ -26,4 +26,8 @@ public class StackToken extends VarToken {
 	Token advSub() {
 		return inside.next();
 	}
+	
+	public int id() {
+		return 5;
+	}
 }

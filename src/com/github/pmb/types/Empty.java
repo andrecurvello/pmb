@@ -1,6 +1,6 @@
 package com.github.pmb.types;
 
-public class Empty extends Token {
+public class Empty extends PassiveToken {
 	
 	private static final long serialVersionUID = 1L;
 
@@ -14,5 +14,9 @@ public class Empty extends Token {
 	
 	public void before(Token t) {
 		throw new MachineException();
+	}
+	
+	public int id() {
+		return 0;
 	}
 }

@@ -1,6 +1,6 @@
 package com.github.pmb.types;
 
-public class VarToken extends Token {
+public class VarToken extends PassiveToken {
 
 	private static final long serialVersionUID = 1L;
 
@@ -33,7 +33,8 @@ public class VarToken extends Token {
 		}
 	}
 	
-	public int hashCode() {
-		return ((Object)this).hashCode();
+	public int id() {
+		return 10;
 	}
+
 }

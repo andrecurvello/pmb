@@ -11,4 +11,8 @@ public class Ok extends Empty {
 	public void reset() {
 		
 	}
+	
+	public int id() {
+		return 3;
+	}
 }

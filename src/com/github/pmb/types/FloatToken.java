@@ -34,6 +34,11 @@ public class FloatToken extends VarToken {
 		return new StringToken(String.valueOf(value));
 	}
 	
+	public int id() {
+		return 2;
+	}
+	
+	/* TODO
 	public Token add(FloatToken f) {
 		return new FloatToken(value + f.value);
 	}
@@ -52,5 +57,5 @@ public class FloatToken extends VarToken {
 	
 	public Token pow(FloatToken f) {
 		return new FloatToken((float)Math.pow(value, f.value));
-	}
+	} */
 }

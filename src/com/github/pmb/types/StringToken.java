@@ -31,6 +31,11 @@ public class StringToken extends FloatToken {
 		return new StringToken("\"" + text.replaceAll("\"", "\"\"") + "\"");
 	}
 	
+	public int id() {
+		return 6;
+	}
+	
+	/* TODO
 	public Token add(FloatToken f) {
 		return new StringToken(text + ((StringToken)f).text);
 	}
@@ -53,5 +58,5 @@ public class StringToken extends FloatToken {
 		int lim = (int)f.value;
 		for(int i = 0; i < lim; i++) s += text;
 		return new StringToken(s);
-	}
+	} */
 }

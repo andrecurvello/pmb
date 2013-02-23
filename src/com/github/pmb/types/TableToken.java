@@ -70,4 +70,8 @@ public class TableToken extends StackToken {
 		int h = t.hashCode();
 		return (h ^ (h >> 4) ^ (h >> 8) ^ (h >> 12)) & 15;
 	}
+	
+	public int id() {
+		return 7;
+	}
 }

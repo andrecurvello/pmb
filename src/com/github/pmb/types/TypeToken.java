@@ -23,4 +23,8 @@ public class TypeToken extends VarToken {
 	public int hashCode() {
 		return next().getClass().hashCode();
 	}
+	
+	public int id() {
+		return 9;
+	}
 }
