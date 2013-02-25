@@ -6,7 +6,7 @@ public class ExpressionStack extends StackToken {
 	StackToken saver = new StackToken();
 	
 	public Token read() {
-		if(next() == saver.next().inside) throw new MachineException();//stack under
+		if(next() == saver.next().inside) closure();
 		return super.read();
 	}
 	
@@ -17,6 +17,10 @@ public class ExpressionStack extends StackToken {
 	
 	public void restore() {
 		before(saver.read());
+	}
+	
+	void closure() {
+		throw new MachineException();//stack under
 	}
 
 	public int id() {

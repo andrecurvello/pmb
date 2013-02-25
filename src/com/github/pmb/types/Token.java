@@ -15,6 +15,7 @@ public class Token implements Serializable {
 	static Token empty = new Empty();
 	static Token ok = new Ok();
 	static ExpressionStack e = new ExpressionStack();
+	static TraceStack r = new TraceStack();
 	static StackToken pri = new StackToken();//precedence chain
 	
 	//interpreter/compiler dual /* Active */
